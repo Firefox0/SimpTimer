@@ -59,6 +59,7 @@ class TimerApp():
     def reset(self, event):
         self.start = 0
         self.timer = 0
+        self.substract = 0
         self.timer_text.SetLabel(self.default_time)
 
     def clear(self, event):
