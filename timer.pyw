@@ -1,4 +1,4 @@
-import wx 
+import wx
 import time 
 import threading 
 
@@ -7,7 +7,7 @@ class TimerApp():
     start = 0
     timer = 0
     substract = 0
-    zero_time = "00:00:00.00"
+    default_time = "00:00:00.00"
 
     def __init__(self):
         
@@ -35,7 +35,7 @@ class TimerApp():
 
         self.timer_box = wx.ListBox(panel, pos=(40, 50), size=(100, 190)) 
 
-        self.timer_text = wx.StaticText(panel, label=self.zero_time, pos=(85, 15))
+        self.timer_text = wx.StaticText(panel, label=self.default_time, pos=(85, 15))
         self.timer_text.SetFont(wx.Font(18, wx.DECORATIVE, wx.ITALIC, wx.NORMAL))
 
         frame.Show()
@@ -59,7 +59,7 @@ class TimerApp():
     def reset(self, event):
         self.start = 0
         self.timer = 0
-        self.timer_text.SetLabel(self.zero_time)
+        self.timer_text.SetLabel(self.default_time)
 
     def clear(self, event):
         self.timer_box.Clear()
